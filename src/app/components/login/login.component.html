@@ -1,0 +1,38 @@
+
+
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form [formGroup]="loginform"  (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Enter Email " formControlName="username">
+    </mat-form-field>
+    <mat-error  
+    *ngIf="!loginform.controls['username'].valid && 
+    loginform.controls['username']?.touched" >username required</mat-error>
+  </p>
+
+
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+    <mat-error  
+    *ngIf="!loginform.controls['password'].valid && 
+    loginform.controls['password']?.touched" >password required</mat-error>
+  </p>
+  <mat-error *ngIf="loginFail"  class="text-danger" >
+    username and password is invalid 
+  </mat-error>
+
+  <div class="button">
+    <button type="submit" mat-button>Login</button>
+  </div>
+  New User ? Click to 
+ <span><a routerLink="/register">Sign Up</a></span>
+
+</form>
+
+</mat-card-content>
+</mat-card>

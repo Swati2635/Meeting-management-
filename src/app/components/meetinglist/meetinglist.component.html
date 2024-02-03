@@ -1,0 +1,94 @@
+
+  
+  
+ <p> 
+
+<mat-toolbar color="blue">
+  <mat-toolbar-row >
+    <h2>Meeting Management</h2>
+    <span class="example-spacer"></span>
+    <!-- <button class="btn" mat-raised-button color="sucess">Username</button>
+    <button mat-raised-button color="primary">  <mat-icon>Logout</mat-icon></button> -->
+    <span class="logout">
+      <!-- <span class="bell-icon">
+        <mat-icon>notifications_none</mat-icon>
+      </span> -->
+       <button  mat-mini-fab matTooltip="John Doe" [matMenuTriggerFor]="menu" [matTooltipPosition]="position.value!"  color="accent">
+        <mat-icon>perm_identity</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span (click)="logOut()">Logout</span>
+          </button>
+      </mat-menu>
+    </span>
+    
+
+  </mat-toolbar-row>
+
+   <mat-toolbar-row>
+    <span>Meeting List</span>
+    <span class="example-spacer"></span>
+    
+
+    <button  id="addBtn" mat-mini-fab color="primary" (click)="schedule()" > 
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+</p>
+
+<mat-tab-group preserveContent>
+  <mat-tab label="My Meetings">
+    <!-- <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/B-lipaiZII8"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe> -->
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="Id">
+          <th mat-header-cell *matHeaderCellDef> Id. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="Subject">
+          <th mat-header-cell *matHeaderCellDef> Subject </th>
+          <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="View">
+            <th mat-header-cell *matHeaderCellDef> view </th>
+            <td mat-cell *matCellDef="let element"> <a [routerLink]="['/meetDetails/', id]" (click)="viewDetail(element.id)">View Details</a></td>
+           
+          </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Edit">
+          <th mat-header-cell *matHeaderCellDef> Edit </th>
+          <td mat-cell *matCellDef="let element"><a  (click)="editMeet(element.id)"><span class="material-icons edit" color="primary">edit</span></a> </td>
+         
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Delete">
+          <th mat-header-cell *matHeaderCellDef> Delete </th>
+          <td mat-cell *matCellDef="let element"> <a  (click)="deleteData(element.id)"><span class="material-icons abc" >delete</span></a> </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+  </mat-tab>
+  <mat-tab label="Scheduled Meetings">Note how the video from the previous tab is still playing.</mat-tab>
+</mat-tab-group>
+
+
+  

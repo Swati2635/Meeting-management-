@@ -1,0 +1,12 @@
+<p>g-calender works!</p>
+
+<!-- <button class="btn btn-primary float-right"  (click)="addEvent()"> 
+    Add new
+  </button> -->
+  <!-- <button (click)="toggleWeekends()">toggle weekends</button> -->
+
+<full-calendar [options]='calendarOptions' 
+[events]="[
+{ title:'event1', date:'15-11-2022'},
+{ title:'event2', date:'17-11-2022'}
+]"></full-calendar>

@@ -1,0 +1,77 @@
+<h2>Meeting Management</h2>
+<mat-card>
+    <mat-card-title>Schedule Meeting</mat-card-title>
+<mat-card-content>
+<form [formGroup]="meetSchedule"  >
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Subject" formControlName="subject" >
+    </mat-form-field>
+     <mat-error  
+     *ngIf="!meetSchedule.controls['subject'].valid && 
+     meetSchedule.controls['subject']?.touched" >subject required</mat-error>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Agenda" formControlName="agenda">
+    </mat-form-field>
+    <mat-error  
+    *ngIf="!meetSchedule.controls['agenda'].valid && 
+    meetSchedule.controls['agenda']?.touched" >agenda required</mat-error>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Location" formControlName="location">
+    </mat-form-field>
+    <mat-error  
+    *ngIf="!meetSchedule.controls['location'].valid && 
+    meetSchedule.controls['location']?.touched" >location required</mat-error>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input  matInput [matDatepicker]="picker"   placeholder="Date"  formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+   <mat-datepicker #picker></mat-datepicker>
+      
+    </mat-form-field>
+    <mat-error  
+    *ngIf="!meetSchedule.controls['date'].valid && 
+    meetSchedule.controls['date']?.touched" >date required</mat-error>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="time" matInput placeholder="Time" formControlName="time">
+      
+   
+    </mat-form-field>
+
+    <mat-error  
+    *ngIf="!meetSchedule.controls['time'].valid && 
+    meetSchedule.controls['time']?.touched" >time required</mat-error>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Attendee" formControlName="attendee">
+      <mat-select formControlName="attendee" multiple>
+        <mat-option *ngFor="let attendee of attendees" [value]="attendee.value">
+          {{attendee.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-error  
+    *ngIf="!meetSchedule.controls['attendee'].valid && 
+    meetSchedule.controls['attendee']?.touched" >attendee required</mat-error>
+  </p>
+
+  <div class="button">
+    <button type="submit" (click)="ngOnSubmit()" mat-button>Submit</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>

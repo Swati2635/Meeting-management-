@@ -1,0 +1,100 @@
+{
+  "Meetings": [
+    {
+      "subject": "subb",
+      "location": "lll",
+      "agenda": "agen",
+      "date": "2022-11-23T18:30:00.000Z",
+      "time": "17:36",
+      "attendee": [
+        "Kaustubh patil",
+        "Yogesh Sonwane",
+        "swati Desale"
+      ],
+      "id": "6"
+    },
+    {
+      "subject": "Swati",
+      "location": "aas",
+      "agenda": "dcss",
+      "date": "2022-11-24T18:30:00.000Z",
+      "time": "23:48",
+      "attendee": "ss",
+      "id": "7"
+    },
+    {
+      "subject": "dwjwi",
+      "location": "ijjjjjjjj",
+      "agenda": "aijfe",
+      "date": "2022-11-14T18:30:00.000Z",
+      "time": "03:45",
+      "attendee": "aa",
+      "id": "8"
+    },
+    {
+      "subject": "dji",
+      "location": "jiiiiiiii",
+      "agenda": "ijjjjjjjj",
+      "date": "2022-11-24T18:30:00.000Z",
+      "time": "03:45",
+      "attendee": "daed",
+      "id": "9"
+    }
+  ],
+  "registerdUsers": [
+    {
+      "fristName": "Swati",
+      "lastName": "Desale",
+      "contact": 7744086905,
+      "email": "swati@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": "1"
+    },
+    {
+      "fristName": "",
+      "lastName": "",
+      "contact": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "2"
+    },
+    {
+      "fristName": "",
+      "lastName": "",
+      "contact": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "3"
+    },
+    {
+      "fristName": "yogesh",
+      "lastName": "Sonawane",
+      "contact": 9370652359,
+      "email": "yogesh@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": "4"
+    },
+    {
+      "fristName": "sd",
+      "lastName": "aasas",
+      "contact": 8876532222,
+      "email": "swati@gmail.com",
+      "password": "123",
+      "confirmPassword": "asas",
+      "id": "5"
+    },
+    {
+      "fristName": "s",
+      "lastName": "a",
+      "contact": 23,
+      "email": "swati@gmail.com",
+      "password": "11234",
+      "confirmPassword": "12342",
+      "id": "6"
+    }
+  ]
+}
